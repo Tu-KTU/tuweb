@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://t.ly/IDP7C') center center no-repeat; /* Đường link ảnh nền của trang web */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif; /* Sử dụng font 'Montserrat' */
+            color: #fff;
+            text-align: center;
+            /*transition: background 0.5s ease-in; */
+        }
+
+        #logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 36px; /* Tăng kích thước chữ */
+            font-weight: bold; /* In đậm chữ */
+        }
+
+        #logo span {
+            color: #8B4513; /* Màu nâu cho phần "Tu" */
+        }
+
+        #button-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #show-message-btn {
+            background-color: #87CEEB; /* Màu xanh nước biển nhạt cho nút */
+            padding: 15px 30px;
+            font-size: 20px; /* Tăng kích thước chữ */
+            font-weight: bold; /* In đậm chữ */
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        #show-message-btn:hover {
+            background-color: #6495ED; /* Màu xanh nước biển đậm khi di chuột qua */
+        }
+
+        #hidden-message {
+            display: none;
+            position: absolute;
+            top: 50%; /* Dịch chữ "Mày ơi t muốn ra ngoài..." xuống */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px; /* Tăng kích thước chữ */
+            font-weight: bold; /* In đậm chữ */
+            animation: show-message 3s ease forwards;
+        }
+
+        #text-me-btn {
+            display: none;
+            background-color: #FFD700; /* Màu vàng cho nút Text Me */
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            
+            border-radius: 50px;
+            margin-top: 200px;
+            opacity: 0;
+            animation: show-text-me-btn 1.4s ease-in-out 1.4s forwards; /* Delay 3s và sau đó chạy hiệu ứng ease-in-out */
+        }
+
+        #text-me-btn:hover {
+            background-color: #FFD700; /* Màu vàng đậm khi di chuột qua */
+            transform: scale(1.1); /* Hiệu ứng scale khi hover */
+        }
+
+        @keyframes show-message {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        @keyframes show-text-me-btn {
+            0% {
+                opacity: 0;
+                transform: translate(0%, -50%) translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(0%, -50%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="logo">Tu<span>Ktu</span></div>
+
+    <div id="button-container">
+        <button id="show-message-btn" onclick="showMessage()">Click here to show message</button>
+        <button id="text-me-btn" onclick="redirectToLink()">Click here to text me</button>
+    </div>
+
+    <div id="hidden-message">Mày ơi t muốn ra ngoài...</div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('show-message-btn').style.display = 'none';
+            document.getElementById('hidden-message').style.display = 'block';
+            document.getElementById('text-me-btn').style.display = 'block';
+        }
+
+        function redirectToLink() {
+            // Thay đổi 'link' thành đường link bạn muốn chuyển hướng đến
+            window.location.href = 'https://www.facebook.com/ktu.tu.75';
+        }
+    </script>
+
+</body>
+</html>
